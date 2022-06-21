@@ -1,5 +1,262 @@
-body {
+* {
+    box-sizing: border-box;
     margin: 0;
-    background: green;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    scroll-behavior: smooth;
+}
+
+.Navbar {
+    background: #2caa60;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.NavbarContainer {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300p;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+#NavbarLogo {
+    background-color: white;
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.NavbarMenu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.NavbarItem {
+    height: 80px;
+}
+
+.NavbarLinks {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+    text-decoration: none;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.NavbarButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.Button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 16px;
+    background: black;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.Button:hover {
+    background: white;
+    color: black;
+    transition: all 0.3s ease;
+}
+
+.NavbarLinks:hover {
+    border-radius: 20px;
+    background: #3bca77;
+    color: #346daf;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 960px) {
+    .NavbarContainer {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+}
+
+.NavbarMenu {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: -1000px;
+    opacity: 1;
+    transform: all 0.5s ease;
+    z-index: -1;
+}
+
+.NavbarMenu.active {
+    background: #2caa60;
+    top: 100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 99;
+    height: 60vh;
+    font-size: 1.6rem;
+}
+
+#NavbarLogo {
+    padding-left: 20px;
+}
+
+.NavbarToggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: white;
+}
+
+.NavbarItem {
+    width: 100%;
+}
+
+.NavbarLinks {
     text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+}
+
+.NavbarButton {
+    padding-bottom: 0.5rem;
+}
+
+.Button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80px;
+    margin: 0;
+}
+
+#MobileMenu {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%, 20%);
+}
+
+.NavbarToggle .bar {
+    display: block;
+    cursor: pointer;
+}
+
+#MobileMenu.is-active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+#MobileMenu.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+#MobileMenu.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Hero Section */
+.Hero {
+    background: #b8d4f5;
+    padding: 50px 0;
+}
+
+.HeroContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 90%;
+    text-align: center;
+    padding: 30px;
+}
+
+.HeroHeading {
+    display:flex;
+    white-space: pre-wrap;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-radius: 16px;
+    font-size: 100px;
+    margin-bottom: 24px;
+    background: #2caa60;
+    color: white;
+}
+
+.HeroHeading span {
+    background: white;
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -mo-text-fill-color: transparent;
+}
+
+.HeroDescription {
+    font-size: 60px;
+    background: #2caa60;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -mo-text-fill-color: transparent;
+}
+
+.highlight {
+    border-bottom: 4px solid rgb(132, 0, 255);
+}
+
+@media screen and (max-width: 768px) {
+    .HeroHeading {
+        font-size: 60px;
+    }
+    .HeroDescription {
+        font-size: 40px;
+    }
 }

@@ -1,8 +1,8 @@
 # My Website
 **A website to hold things about me.**
 
-**---| Something |---**
+**---| ABANDONED |---**
 
-Something
+After JavaScript & HTML, CSS broke the camel's back.
 
-Something
+Maybe another day...

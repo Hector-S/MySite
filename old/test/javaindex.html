@@ -1,0 +1,136 @@
+<!DOCTYPE html> <!-- This is a html document. -->
+<html> <!-- Tag, like brackets. html is parent of head + body. -->
+
+    <head> <!-- Head defines data about document and imports resources. Metadata -->
+
+        <meta charset="UTF-8"> <!-- metadata -->
+        <meta name="description" content="Hector Soto's website.">
+        <meta name="author" content="Hector Soto">
+        <meta name="keywords" content="HTML, Tutorial">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Good for adjusting to mobile devices. -->
+        <title>Hector Soto's Website</title>
+
+    </head> <!-- Child of html tag. Sibling of body tag. -->
+
+    <body style="background-color:aqua"> <!-- Meat and bones of the website. -->
+        <header>
+            <h1>The JavaScript Hub</h1>
+            <hr/>
+            <nav> <!-- For navigation. -->
+                <a href="../index.html"> Home Page</a>
+                <a href="javascript/java1.html"><h3>Go to JavaScript 1</h3></a>
+            </nav>
+            <hr/>
+        </header>
+        <main>
+            <script> //Thank god! I can use normal commenting convention in script tags. html's commenting syntax is horrible.
+                console.log("Welcome to the JavaScript Hub!"); //Do comments work?
+                /*  Data Types:
+                    undefined = variable not set to anything.
+                    null = nothing.
+                    boolean = true/false.
+                    string = string.
+                    symbol = immutable primitive value that is unique?
+                    number = number.
+                    object = Can store key value pairs?
+                */
+               var myName = "Hector"; //A variable. Can be set to other data types. Can be used throughout the whole program.
+               let ourName = "tutorial"; //Can only be used within scopes.
+               const pi = 3.14; //Can never change.
+               console.log("My name is " + myName + " and I'm following a " + ourName + '.');
+               console.log("The length of my name is " + myName.length + '.');
+               //Strings can be made with double quotes or single quotes. Single quotes let you use double quotes inside.
+               //Can access characters of strings like arrays. Can't alter individual characters of a string.
+               //Honestly, not needing to learn much/anything to code in this language.
+               function MakeSentence(Noun, Adjective, Verb, Adverb)
+               {
+                    var result = "The " + Adjective + ' ' + Noun + ' ' + Verb + " to the store " + Adverb + '.'
+                    return result;
+               }
+               console.log(MakeSentence("dog", "big", "ran", "quickly"));
+               console.log(MakeSentence("bike", "slow", "flew", "slowly"));
+               //Arrays can hold a mix of data types. Arrays can have elements that are themselves arrays.
+               //var Array = [[5, "Oh god why is this possible?"], "pizza", 6, 5.234]
+               //Array[0][1] = "Oh god why is this possible?";
+               //Array.push([4, 23, 8]); //This array is added as the last element in the array.
+               //Array.pop(); //Removes the last element from the array and returns it.
+               //Array.shift(); //Same as pop() but for the first element of the array.
+               //Array.unshift("Happy"); //Adds element as the first element in the array. Shift right.
+               if(typeof myName != "undefined")
+               {
+                    console.log("My name exists!");
+               }
+               var Array = [1, 2 ,3 , "String!", 4 , 5];
+               console.log(JSON.stringify(Array));
+               //Return value of functions without return is undefined.
+               //Objects are JavaScript's structs/classes.
+               var dog = {
+                    "name": "Darcey",
+                    "legs": 4,
+                    "tails": 1,
+               };
+               var Darcey = {}; Darcey = dog; //Without setting Darcey as an object first. It doesn't inherit the default Object properties cause that's possible for some reason?
+               //^ This inconsistency makes me hate this language a little bit. Based on how other stuff works, I shouldn't need to do this.
+               console.log(Darcey.name + " has " + Darcey.legs + " legs and " + Darcey["tails"] + " tails.");
+               //Can also have variables in objects be numbers. 5: "thing", or 12: 5,. And access them with numbers.
+               //Darcey.bark = "bow-wow". Automatically adds property to objects named "bark" with a value of "bow-wow".
+               //delete Darcey.bark; //Would delete the bark property.
+               if(!Darcey.hasOwnProperty("bark"))
+               {
+                    console.log("Darcey doesn't have a bark property!");
+               }
+               //Use var in for loops. let doesn't work.
+               //I can understand why someone who learns JavaScript as a first language would hate C/C++ or vice-versa.
+               //Math.random() gives random number between 0 and 1.
+               //Math.floor(Math.random() * 20) //Gives random whole number between 0 and 19.
+               //parseInt("1035"); Returns 1035 as an integer.
+               //parseInt("0110", 2); //Treats string as a binary number.
+               // === considers different types as different. 0 == '0' is true. 0 === '0' is false.
+               // let doesn't let you declare it twice. var does.
+               //"use strict"; Catches common coding mistakes and unsafe actions. Can use at top of file or in functions.
+               //const usually declared with full capital names. Think of defines.
+               //const arrays can have their individual elements reassigned. So what is the point of a const array? It only stops you from completely replacing it.
+               //constarray[1] = 5; is okay. constarray = [5, 3]; is not.
+               //Object.freeze(const); //Frees a const so that it can't be altered.
+               //You have try + catch blocks with exceptions.
+               //const magic = () => new Date(); //magic as a new function.
+               //const myconcat = (arr1, arr2) => arr1.concat(arr2); A function that concatenates two arrays.
+               //console.log(myconcat([1, 2, 3], [4, 5]));
+               //Functions have their variables set to default parameters.
+               //Have a parameter as ...args will give an array called args with the passed values.
+               //Setting array1 = array2 makes them point to the same data/object. :(.
+               //^ To copy an array, do array1 = [...array2].
+               //Destructuring. var voxel = {x: 3.6, y: 7.4, z: 6.54};
+               //const {x:a, y:b, z:c} = voxel; //const a = 3.6. b = 7.4. c = 6.54
+               //^ hate this because I feel a:x makes more sense than x:a. This syntax choice hurts readability for me personally.
+               //^ Seems like an unnecessary way to fix stuff on one line at the cost of quick readability.
+               //^ Hell the syntax being slightly different would make it better but the choice they made I feel is legit the worst one.
+               //Template literals. Don't use ', use `.
+               console.log(`My dog's name is ${Darcey.name}.`);
+               class NewDog
+               {
+                    constructor(Name = "Jeff", LegAmount = 4, TailAmount = 1)
+                    {
+                        this.name = Name;
+                        this.legs = LegAmount;
+                        this.tails = TailAmount;
+                    }
+               }
+               Darcey = new NewDog("Darcey");
+               console.log(Darcey.name + " has " + Darcey.legs + " legs and " + Darcey["tails"] + " tails.");
+               //import {SomeFunction} from "./file.js" //Don't need .js
+               //export {SomeFunctoin} //Export a function. Can also export variables.
+               //import * as library from "./someLibrary.js" //Import everying as an object called library.
+               //export default
+               //import SomeFunction from "" //If it was exported as a default.
+
+
+            </script>
+        </main>
+        <footer>
+
+        </footer>
+
+    </body> <!-- Child of html tag. Sibling of head tag. -->
+
+</html>

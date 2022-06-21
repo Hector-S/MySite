@@ -1,13 +1,65 @@
-
-<html lang = "en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset = "UTF-8">
-    <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
-    <title> Document </title>
-    <link re1 = "stylesheet" href = "styles.css">
+    <meta charset="UTF-8">
+    <meta name="description" content="Hector Soto's website.">
+    <meta name="author" content="Hector Soto">
+    <meta name="keywords" content="Resume, Hector, Soto">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hector Soto's Website</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Hector Soto</h1>
-    <p>Wow, I hate html so far.</p>
+    <nav class="Navbar">
+        <div class="NavbarContainer">
+            <a href="#home" id="NavbarLogo"><b>Hector Soto</b></a>
+            <div class="NavbarToggle" id="MobileMenu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="NavbarMenu">
+                <li class="NavbarItem">
+                    <a href="#Home" class="NavbarLinks" id="HomePage">Home</a>
+                </li>
+                <li class="NavbarItem">
+                    <a href="#Resume" class="NavbarLinks" id="ResumePage">Resume</a>
+                </li>
+                <li class="NavbarItem">
+                    <a href="#Git" class="NavbarLinks" id="GitPage">GitHub</a>
+                </li>
+                <li class="NavbarItem">
+                    <a href="#Model" class="NavbarLinks" id="3D Models">3D Models</a>
+                </li>
+                <li class="NavbarButton">
+                    <a href="old/index.html" class="Button" id="Extra">Extra</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="Hero" id="Home">
+        <div class="HeroContainer">
+            <h1 class="HeroHeading">My <span>Resume</span></h1>
+            <embed src="Data/Resume.pdf" width="100%" height="500px"></embed>
+            <button class="MainButton"><a href="#">Download Resume</a></button>
+            <p class="HeroDescription">Skills</p>
+        </div>
+    </div>
+
+    <div class="GitPage" id="GitPageID">
+        <div class="Hero">
+            <div class="HeroContainer">
+                <div class="GitPageContent">
+                    <h1 class="HeroHeading">GitHub <span>Projects</span></h1>
+                    <button class="MainButton"><a href="#">Go to GitHub Profile</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
 </body>
+<footer>
+
+</footer>
 </html>
